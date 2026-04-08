@@ -66,13 +66,7 @@ def _(mo):
 
 @app.cell
 def _(extract_activations, sentences, tokenizer, trained_model):
-    trained_activaions = extract_activations(trained_model, tokenizer, sentences)
-    return (trained_activaions,)
-
-
-@app.cell
-def _(trained_activaions):
-    trained_activations = trained_activaions
+    trained_activations = extract_activations(trained_model, tokenizer, sentences)
     return (trained_activations,)
 
 
@@ -84,14 +78,7 @@ def _(trained_model):
 
 @app.cell
 def _(extract_activations, sentences, tokenizer, untrained_model):
-    # todo fix typo
-    untrained_activaions = extract_activations(untrained_model, tokenizer, sentences)
-    return (untrained_activaions,)
-
-
-@app.cell
-def _(untrained_activaions):
-    untrained_activations = untrained_activaions
+    untrained_activations = extract_activations(untrained_model, tokenizer, sentences)
     return (untrained_activations,)
 
 
@@ -132,8 +119,8 @@ def _(binary_labels, probe_all_layers, trained_activations):
 
 
 @app.cell
-def _(trained_activaions, trained_activations):
-    del trained_activations, trained_activaions
+def _(trained_activations,):
+    del trained_activations
     return
 
 
@@ -144,8 +131,8 @@ def _(binary_labels, probe_all_layers, untrained_activations):
 
 
 @app.cell
-def _(untrained_activaions, untrained_activations):
-    del untrained_activations, untrained_activaions
+def _(untrained_activations):
+    del untrained_activations
     return
 
 
